@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <article class="blog-post">
+    <h2 class="display-5 post-title mb-3"><%- post.title %></h2>
+    <div class="mb-4 post-date">
+      <%= post.publishDate %> by <a href="#" class="text-decoration-none text-warning">Author Name</a>
+    </div>
+    <p class="fs-5 post-content">
+      <%= post.content %>
+    </p>
+    <a href="/posts/<%= index %>/edit" class="btn btn-primary-custom mt-4">Edit</a>
+    <a href="/posts/<%= index %>/delete" class="btn btn-primary-custom mt-4">Delete</a>
+  </article>
+</div>
+
+<%- include('partials/footer') %>

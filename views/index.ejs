@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <% posts.forEach((post, index) => { %>
+      <div class="col-md-6 post-container">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title post-title"><%= post.title %></h3>
+            <div class="card-subtitle mb-2 text-muted post-date"><%= post.publishDate %></div>
+            <p class="card-text post-content"><%= post.content.slice(0, 150) %>...</p>
+            <a href="/posts/<%= index %>/post" class="read-more">
+              Continue reading
+              <svg class="bi" width="16" height="16" fill="currentColor">
+                <use xlink:href="https://icons.getbootstrap.com/assets/icons/chevron-right.svg#chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
